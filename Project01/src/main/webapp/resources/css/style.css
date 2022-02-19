@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500&display=swap');
+/* 초기화 */
+* {margin:0; padding:0;vertical-align:top;}
+html, input{font-size:16px; font-weight:normal; color:#333; letter-spacing:-0.5px;
+	font-family: 'Noto Sans KR', 'Malgun Gothic',sans-serif; font-weight:300;}
+input[type=button], input[type=submit], input[type=reset]{font-weight:500;}
+tr, th, td{border:1px solid #ccc;}
+body{font-size:inherit; font-weight:inherit;}
+h1, h2, h3, h4, h5, h6{font-size:inherit; font-weight:inherit; display:inline-block;}
+a{color:#333;text-decoration:none;}
+li{list-style:none;}
+.fixed::after{content:''; clear:both; display:block;}
+
+/* css 시작 */
+
+/* header */
+.top_header{width:100%; background:rgba(102,102,102,0.15); height:30px; line-height:30px;}
+.top_header ul{width:1200px; margin:0 auto; font-weight:500;}
+.top_header li{float:right; margin-left:10px;}
+.top_header a{color:#666;}
+/**/
+.top_header.main{width:100%; background:rgba(255,255,255,0.15); height:30px; line-height:30px;}
+.top_header.main a{color:#fff;}
+.header{width:1200px; height:100px; margin:0 auto;
+	line-height:100px; border-bottom:1px solid rgba(102,102,102,0.5);}
+.header.main{border-bottom:1px solid rgba(255,255,255,0.5);}
+.header > logo {float:left;}
+.header > ul{float:right;}
+.header > ul > li {float:left; margin-left:20px; font-size:1.25rem; font-weight:500;}
+.header > ul > li a#sub_4{color:#aac117;}
+.header.main > ul > li > a{color:#fff;}
+.header.main > ul > li:nth-child(4) > a{color:#bfff13;}
+/* .heaer .sub_nav li {line-height:1; height:20px;} */
+
+
+/* body */
+.wrap{width:100%; margin-top:50px;}/*background:url('../images/bg.jpg') center no-repeat; height:100%;*/
+section{max-width:1200px; margin:0 auto; }/*height:100vh;*/
+/* .wrap:first-child section{background:url('../images/bg.jpg') center no-repeat;} */
+
+/* book.jsp */
+.book-list{margin-top:100px; font-size:1rem; vertical-align:top;}
+.book-list article {width:595px; box-sizing:border-box;border:1px solid #ddd; padding:40px; display:inline-block; vertical-align:top; height:550px;}
+.book-list article:first-child{margin-right:6px;}
+.book-list input{font-size:1rem; border:none; text-align:right;}
+.book-list input[type=button]{margin:10px 0; cursor:pointer; width:100%; text-align:center; padding:10px 0;}
+.book-list input[type=submit]{margin-top:10px;cursor:pointer; width:100%; text-align:center; padding:10px 0;}
+.book-list input[type=date]{padding:0; margin:0;}
+.book-list ul{width:100%;}
+.book-list ul:nth-child(2) li{height:100px;}
+.book-list ul li{float:left; text-align:right; border-bottom:1px solid #ccc; height:50px; line-height:50px; width:70%;}
+.book-list ul li:first-child{width:30%; font-weight:500; text-align:left;}
+.book-list .option{position:relative; background:#fff; cursor:pointer; padding-right:25px; box-sizing:border-box;}
+.book-list .option::before{content:''; display:block; transform:rotate(45deg) translateY(-100%);
+	position:absolute; right:10px; top:50%;
+	border:4px solid #666; border-top-color:transparent; border-left-color:transparent;}
+.book-list .option ul{position:absolute; right:0; top:100%; border:1px solid #ccc; box-sizing:border-box; background:#fff; width:160px; box-shadow:0px 0px 10px 1px rgb(0 0 0 / 10%);}
+.book-list .option ul li{font-weight:300; text-align:right;height:auto; padding:5px 20px 5px 0; box-sizing:border-box; background:#fff; width:100%; line-height:1.2; white-space:nowrap; cursor:pointer;}
+.book-list .option ul li:last-child{border-bottom:0;}
+#getRoomList{width:100%; border-collapse:collapse;}
+#getRoomList th{border:1px solid #ccc; padding:6px 0;}
+#getRoomList tbody tr{cursor:pointer;}
+#getRoomList tbody tr:hover{background:#f2f2f2;}
+#getRoomList tbody tr td{text-align:center; padding:5px; box-sizing:border-box;}
+
+/* 객실정보 */
+.room_top{width:1200px; margin:0 auto;}
+.room_info_wrap{float:right;}
+.room_info{font-weight:500;}
+.room_info_wrap tr, .room_info_wrap th, .room_info_wrap td{border:none;}
+.room-slide{float:left;}
+
+
+/* 객실관리*/
+.box_tab li.on{border:none; background:#aac117;}
+.box_tab li.on a{color:#fff;}
+
+/**/
+
+.booking-list, .booking-list_btn{margin:0 auto; width:1000px;}
+.booking-list_btn{ text-align:right;}
+.booking-list{margin-top:100px;}
+.booking-list tr td{cursor:pointer;}
+.booking-list tr th, #tblMember tr th{font-weight:500; color:#666;}
+#tblMember tr th, #tblMember tr td, .booking-list tr th, .booking-list tr td{padding:7px 5px;}
+.booking-list tr:hover td{background:#f2f2f2;}
+
+
+/* 회원 관리 member.jsp */
+#tblMember{margin:100px auto 0; width:1000px;}
+
