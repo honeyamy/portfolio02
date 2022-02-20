@@ -126,11 +126,11 @@ public class JController {
 		model.addAttribute("roomtypeList", roomtypeList);
 		return "manage";
 	}
-	@ResponseBody
+//	@ResponseBody
 	@RequestMapping(value="/loadBookList", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	public String loadBookList(HttpServletRequest hsr, Model model) {
-//		int id = Integer.parseInt(hsr.getParameter("id"));
-//		System.out.println(id);
+		int id = Integer.parseInt(hsr.getParameter("id"));
+		System.out.println(id);
 		int room_type = Integer.parseInt(hsr.getParameter("room_type"));
 		int howmany = Integer.parseInt(hsr.getParameter("howmany"));
 		String checkin = hsr.getParameter("checkin");
@@ -153,9 +153,17 @@ public class JController {
 	@ResponseBody
 	@RequestMapping(value="/loadMyList", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	public String loadMyList(HttpServletRequest hsr, Model model) {
+//		System.out.println(id);
+		int room_type = Integer.parseInt(hsr.getParameter("room_type"));
+		int howmany = Integer.parseInt(hsr.getParameter("howmany"));
+		String checkin = hsr.getParameter("checkin");
+		String checkout = hsr.getParameter("checkout");
 		int id = Integer.parseInt(hsr.getParameter("id"));
+		System.out.println(room_type);
+		System.out.println("room_type : " + room_type + ", howmany : " + howmany);
+		System.out.println("checkin : " + checkin + ", checkout : " + checkout + ", id : " + id);
 		iJBook ibook = sqlSession.getMapper(iJBook.class);
-		ArrayList<Books> mybooks = ibook.loadbookList(id);
+		ArrayList<Books> mybooks = ibook.loadbookList(room_type, howmany, checkin, checkout, id);
 		JSONArray ja = new JSONArray();
 		for(int i = 0; i < mybooks.size(); i++) {
 			JSONObject jo = new JSONObject();
@@ -165,9 +173,8 @@ public class JController {
 			jo.put("howmuch", mybooks.get(i).getHowmuch());
 			jo.put("type_name", mybooks.get(i).getType_name());
 			ja.add(jo);
-			System.out.println("mylist" + jo);
+			System.out.println("mylist " + jo);
 		}
-//		select a.id, a.name, a.howmany, a.howmuch, b.type_name 
 		return ja.toString();
 	}
 	@RequestMapping(value="/updateBook", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
