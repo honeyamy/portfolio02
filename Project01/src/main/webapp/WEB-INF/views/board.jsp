@@ -81,6 +81,7 @@
 	  a:link {color:black; text-decoration: none;}
 	  a:visited {color:black; text-decoration: none;}
 	  a:hover {color:black; text-decoration: underline;}
+	  .active {background-color:#cdd5ec;}
  </style>
 <body>
 <%@include file ="header.jsp" %>
@@ -123,7 +124,7 @@
             </c:if>
             
         	<c:forEach var="num" begin="${pm.startPage}" end="${pm.endPage}">
-        		<li class="pageInfo_btn"><a href="${num}">${num}</a></li>
+        		<li class="pageInfo_btn ${pm.page.pageNum==num?"active":""}"><a href="${num}">${num}</a></li>
         	</c:forEach>
         	
         	<c:if test="${pm.next}">
