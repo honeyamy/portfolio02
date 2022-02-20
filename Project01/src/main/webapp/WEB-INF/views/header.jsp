@@ -49,6 +49,7 @@
 			<li><a id="sub_4" href="/project/sub04">실시간예약</a></li>
 		</ul>
 	</div>
+	<script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 	<script>
 		$(document)
 		.on('click','#sub_4', function() {
