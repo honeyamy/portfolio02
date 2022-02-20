@@ -8,16 +8,16 @@
 			<table class="booking-list">
 				<thead>
 					<tr>
-						<th></th><th>예약번호</th><th>아이디</th>
+						<th colspan="2"></th><th>예약번호</th><th>아이디</th>
 						<th>고객이름</th><th>연락처</th><th>객실명</th>
 						<th>객실종류</th><th>인원</th><th>가격</th>
 						<th>체크인</th><th>체크아웃</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${getReservation}" var="getList">
+					<c:forEach items="${getReservation}" var="getList" varStatus="stt">
 						<tr>
-							<td onclick="event.cancelBubble=true"><input type="checkbox" name="check" value="${getList.id}"></td><td>${getList.id}</td><td>${getList.booker}</td>
+							<td onclick="event.cancelBubble=true">${stt.count}</td><td onclick="event.cancelBubble=true"><input type="checkbox" name="check" value="${getList.id}"></td><td>${getList.id}</td><td>${getList.booker}</td>
 							<td>${getList.name}</td><td>${getList.mobile}</td><td>${getList.roomname}</td>
 							<td>${getList.type_name}</td><td>${getList.howmany}</td><td>${getList.howmuch}</td>
 							<td>${getList.in_date}</td><td>${getList.out_date}</td>
@@ -117,7 +117,12 @@
 					alert('객실 종류를 선택해주세요.');
 					return false;
 				}
-				loadList(title);
+// 				loadList(title);
+				console.log("보내는 room_type : " + $('.option p').attr('data-value'));
+				console.log("보내는 checkin : " + $('#in_date').val());
+				console.log("보내는 checkout : " + $('#out_date').val());
+				console.log("보내는 howmany : " + $('#howmany').val());
+				console.log("보내는 id : " + title);
 				loadMyList(title);
 			})
 			return false;
@@ -173,9 +178,35 @@
 			});
 		})
 		;
-		function loadList(title){
+// 		function loadList(title){
+// 			$.ajax({
+// 				url : '/project/loadBookList',
+// 				data : {
+// 					room_type : $('.option p').attr('data-value'),
+// 					checkin : $('#in_date').val(),
+// 					checkout : $('#out_date').val(),
+// 					howmany : $('#howmany').val(),
+// 					id : title
+// 				},
+// 				datatype : 'Json',
+// 				method : 'post',
+// 				success : function(data) {
+// 					let str = '';
+// 					$('#getRoomList tbody').empty();
+// 					for(i = 0; i < data.length; i++){
+// 						let str = '<tr data-value="' + data[i]['id'] + '"><td class="roomname">'
+// 								  + data[i]['name'] + '</td><td class="roomtype">'
+// 								  + data[i]['type_name'] + '</td><td class="howmany">'
+// 								  + data[i]['howmany'] + '</td><td class="howmuch">'
+// 								  + data[i]['howmuch'] + '</td></tr>';
+// 						$('#getRoomList tbody').append(str);
+// 					}
+// 				}
+// 			});
+// 		};
+		function loadMyList(title){
 			$.ajax({
-				url : '/project/loadBookList',
+				url : '/project/loadMyList',
 				data : {
 					room_type : $('.option p').attr('data-value'),
 					checkin : $('#in_date').val(),
@@ -188,36 +219,15 @@
 				success : function(data) {
 					let str = '';
 					$('#getRoomList tbody').empty();
-					for(i = 0; i < data.length; i++){
-						let str = '<tr data-value="' + data[i]['id'] + '"><td class="roomname">'
-								  + data[i]['name'] + '</td><td class="roomtype">'
-								  + data[i]['type_name'] + '</td><td class="howmany">'
-								  + data[i]['howmany'] + '</td><td class="howmuch">'
-								  + data[i]['howmuch'] + '</td></tr>';
-						$('#getRoomList tbody').append(str);
-					}
-				}
-			});
-		};
-		function loadMyList(title){
-			$.ajax({
-				url : '/project/loadMyList',
-				data : {
-					id : title
-				},
-				datatype : 'Json',
-				method : 'post',
-				success : function(data) {
-					let str = '';
+					
 					for(i = 0; i < data.length; i++){
 						str = '<tr data-value="' + data[i]['id'] + '"><td class="roomname">'
 								  + data[i]['name'] + '</td><td class="roomtype">'
 								  + data[i]['type_name'] + '</td><td class="howmany">'
 								  + data[i]['howmany'] + '</td><td class="howmuch">'
 								  + data[i]['howmuch'] + '</td></tr>';
-						if($('.option p').text() ==  data[i]['type_name']){
-							$('#getRoomList tbody').append(str);
-						}
+						$('#getRoomList tbody').append(str);
+						
 					}
 				}
 			});

@@ -8,7 +8,7 @@ public interface iJBook {
 	Member getBookSession(String userid);
 	ArrayList<Books> getReservation();
 	ArrayList<Books> bookList(int room_type, int howmany, String checkin, String checkout);
-	ArrayList<Books> loadbookList(int id);
+	ArrayList<Books> loadbookList(int room_type, int howmany, String checkin, String checkout, int id);
 	void updateBook(int bookid, String bookerId, String roomid, String in_date, String out_date);
 	void deleteBook(String bookid);
 }
