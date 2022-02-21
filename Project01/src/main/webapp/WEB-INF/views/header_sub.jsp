@@ -43,11 +43,8 @@
 					<li class="nav-item">
 						<a href="/project/listBoard">커뮤니티</a>
 						<ul class="b_sub_nav">
-							<li><a href="/project/room">Room-A</a></li>
-							<li><a href="/project/room2">Room-B</a></li>
-							<li><a href="/project/room3">Room-C</a></li>
-							<li><a href="/project/room4">Room-D</a></li>
-							<li><a href="/project/room5">Room-E</a></li>
+							<li><a href="/project/listBoard">공지사항</a></li>
+							<li><a href="#">QNA</a></li>
 						</ul>
 					</li>
 					<li class="nav-item"><a href="/project/sub04">실시간예약</a></li>
