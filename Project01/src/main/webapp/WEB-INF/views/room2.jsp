@@ -6,11 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta
-      name="viewport"
+<meta name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
-<title> - Room - </title>
+<title> - Room2 - </title>
 	<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 	<link rel="stylesheet" href="${path}/resources/css/reset.css"> 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -111,13 +110,9 @@
 }
 </style>
 <body>
-<div class="wrap">
-	<%@include file ="header_sub.jsp" %>
-</div>
-<div
-      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-      class="swiper mySwiper2"
-    >
+<%@include file ="header_sub.jsp" %>
+<div class="b_container">
+	<div style="--swiper-navigation-color: #fff; --swiper-pagination-color:#fff;" class="swiper mySwiper2">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="resources/images/suite.jpg" />
@@ -151,52 +146,53 @@
 	      </div>
      </div>
     </div>
-<table align=center class=table1>
-<tr><th class=room_info>Suite Room<hr></th></tr>
-<tr><td style='font-weight:bold;'>객실명</td><td>102호</td></tr>
-<tr><td style='font-weight:bold;'>객실종류</td><td>스위트</td></tr>
-<tr><td style='font-weight:bold;'>최대숙박인원</td><td>3</td></tr>
-<tr><td style='font-weight:bold;'>숙박비</td><td>60,000원</td></tr>
-<tr><td style='font-weight:bold;'>체크인/체크아웃</td><td>15:00/12:00</td></tr>
-</table>
-<table align=center class=table2>
-<tr><td><input type=button id=btnDone name=btnDone value="실시간 예약하기" class="Done"></td></tr>
-</table>
-<h2 class="room_title">어메니티</h2>
-<div class="normal">일반</div>
-<div class="normal_list">
-	<p>손전등 / 슬리퍼 /전화기</p>
-	<p>티포트 / 금고 /구둣주걱</p>
-	<p>구두클리너 / 55" UHD TV</p>	
-</div>
-<div class="bath_room">욕실</div>
-<div class="bath_room_list">
-	<p>1회용 칫솔 및 치약/</p>
-	<p>면도기 / 목욕 가운/</p>
-	<p>비데 / 헤어드라이어/</p>
-	<p>욕실용품</p>
-</div>
-<div class="etc">기타</div>
-<div class="etc_list">
-	<p>무료 생수 1일 2병 /</p>
-	<p>보이스 메일 서비스 /</p>
-	<p>커피 및 티 메이커</p>
-</div>
-<h2 class="special">특별서비스</h2>
-<div class="special_service">
-	<ul>
-		<li>- 맞춤형 베개 제공</li>
-		<li>- 전 객실 초고속 무료 인터넷(유선,와이파이)</li>
-		<li>- 턴다운 서비스 제공</li>
-		<li>- 조식 제공</li>
-	</ul>
-</div>
-<h2 class="information">추가정보</h2>
-<div class="info_list">
-	<ul>
-		<li>※이용하시는 호텔 모든 시설은 전부 금연이오니, 이용에 착오 없으시기 바랍니다.</li>
-		<li style='color:gray;'>※추가 인원이 발생 하실 경우, 1인 당 20,000원씩 부과 됩니다.</li>
-	</ul>
+	<table align=center class=table1>
+	<tr><th class=room_info>Suite Room<hr></th></tr>
+	<tr><td style='font-weight:bold;'>객실명</td><td>102호</td></tr>
+	<tr><td style='font-weight:bold;'>객실종류</td><td>스위트</td></tr>
+	<tr><td style='font-weight:bold;'>최대숙박인원</td><td>3</td></tr>
+	<tr><td style='font-weight:bold;'>숙박비</td><td>60,000원</td></tr>
+	<tr><td style='font-weight:bold;'>체크인/체크아웃</td><td>15:00/12:00</td></tr>
+	</table>
+	<table align=center class=table2>
+	<tr><td><input type=button id=btnDone name=btnDone value="실시간 예약하기" class="Done"></td></tr>
+	</table>
+	<h2 class="room_title">어메니티</h2>
+	<div class="normal">일반</div>
+	<div class="normal_list">
+		<p>손전등 / 슬리퍼 /전화기</p>
+		<p>티포트 / 금고 /구둣주걱</p>
+		<p>구두클리너 / 55" UHD TV</p>	
+	</div>
+	<div class="bath_room">욕실</div>
+	<div class="bath_room_list">
+		<p>1회용 칫솔 및 치약/</p>
+		<p>면도기 / 목욕 가운/</p>
+		<p>비데 / 헤어드라이어/</p>
+		<p>욕실용품</p>
+	</div>
+	<div class="etc">기타</div>
+	<div class="etc_list">
+		<p>무료 생수 1일 2병 /</p>
+		<p>보이스 메일 서비스 /</p>
+		<p>커피 및 티 메이커</p>
+	</div>
+	<h2 class="special">특별서비스</h2>
+	<div class="special_service">
+		<ul>
+			<li>- 맞춤형 베개 제공</li>
+			<li>- 전 객실 초고속 무료 인터넷(유선,와이파이)</li>
+			<li>- 턴다운 서비스 제공</li>
+			<li>- 조식 제공</li>
+		</ul>
+	</div>
+	<h2 class="information">추가정보</h2>
+	<div class="info_list">
+		<ul>
+			<li>※이용하시는 호텔 모든 시설은 전부 금연이오니, 이용에 착오 없으시기 바랍니다.</li>
+			<li style='color:gray;'>※추가 인원이 발생 하실 경우, 1인 당 20,000원씩 부과 됩니다.</li>
+		</ul>
+	</div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>

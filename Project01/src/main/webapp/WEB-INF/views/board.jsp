@@ -17,7 +17,6 @@
 </head>
  <style>
 	  h5 {
-  	  	margin-top:5%;  
  	  	margin-left:49%; 
 	  	font-size:1.8rem;
 	  	font-weight:500;
@@ -87,64 +86,66 @@
   	  }
 	  a:link {color:black; text-decoration: none;}
 	  a:visited {color:black; text-decoration: none;}
-	  a:hover {color:black; text-decoration: underline;}
+		.b_container a:hover {color:black; text-decoration: underline;}
 	  .active {text-decoration: underline;}
  </style>
 <body>
 <%@include file ="header_sub.jsp" %>
-<h5>FAQ</h5>
-<div class="table_wrap" align=center>
-	<input type=button class="write" id="write" value="글쓰기">
-	<table>
-		<thead>
-			<tr>
-				<th class="bno_width">번호</th>
-				<th class="title_width">제목</th>
-				<th class="writer_width">작성자</th>
-				<th class="regdate_width">작성일</th>
-				<th class="updatedate_width">수정일</th>
-			</tr>
-		</thead>
-		<c:forEach items="${list}" var="list" varStatus="status">
-            <tr>
-<%--             	<td><c:out value="${list.bno}"/></td> --%>
-            	<td>
-	     			<c:out value="${status.count}"/>
-				</td>
-				<td>
-					<a id=get href='<c:out value="${list.bno}"/>'>
-                        <c:out value="${list.title}"/>
-                    </a>
-                </td>
-                <td><c:out value="${list.writer}"/></td>
-                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
-                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updateDate}"/></td>
-            </tr>
-        </c:forEach>
-	</table>
-	
-	<div class="pageInfo_wrap" >
-        <div class="pageInfo_area" id="pageInfo_area">
-        	<ul id="pageInfo" class="pageInfo">
-        	<c:if test="${pm.prev}">
-                <li class="previous"><a href="${pm.startPage-1}">◀</a></li>
-            </c:if>
-            
-        	<c:forEach var="num" begin="${pm.startPage}" end="${pm.endPage}">
-        		<li class="pageInfo_btn ${pm.page.pageNum==num?"active":""}"><a href="${num}">${num}</a></li>
-        	</c:forEach>
-        	
-        	<c:if test="${pm.next}">
-                <li class="next"><a href="${pm.endPage+1}">▶</a></li>
-            </c:if>  
-        	</ul>
-        </div>
-    </div>
-    
-	<form id="move" method="get">
-		<input type="hidden" name="pageNum" value="${pm.page.pageNum}">
-        <input type="hidden" name="amount" value="${pm.page.amount}">    
-    </form>
+<div class="b_container">
+	<h5>FAQ</h5>
+	<div class="table_wrap" align=center>
+		<input type=button class="write" id="write" value="글쓰기">
+		<table>
+			<thead>
+				<tr>
+					<th class="bno_width">번호</th>
+					<th class="title_width">제목</th>
+					<th class="writer_width">작성자</th>
+					<th class="regdate_width">작성일</th>
+					<th class="updatedate_width">수정일</th>
+				</tr>
+			</thead>
+			<c:forEach items="${list}" var="list" varStatus="status">
+	            <tr>
+	<%--             	<td><c:out value="${list.bno}"/></td> --%>
+	            	<td>
+		     			<c:out value="${status.count}"/>
+					</td>
+					<td>
+						<a id=get href='<c:out value="${list.bno}"/>'>
+	                        <c:out value="${list.title}"/>
+	                    </a>
+	                </td>
+	                <td><c:out value="${list.writer}"/></td>
+	                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
+	                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updateDate}"/></td>
+	            </tr>
+	        </c:forEach>
+		</table>
+		
+		<div class="pageInfo_wrap" >
+	        <div class="pageInfo_area" id="pageInfo_area">
+	        	<ul id="pageInfo" class="pageInfo">
+	        	<c:if test="${pm.prev}">
+	                <li class="previous"><a href="${pm.startPage-1}">◀</a></li>
+	            </c:if>
+	            
+	        	<c:forEach var="num" begin="${pm.startPage}" end="${pm.endPage}">
+	        		<li class="pageInfo_btn ${pm.page.pageNum==num?"active":""}"><a href="${num}">${num}</a></li>
+	        	</c:forEach>
+	        	
+	        	<c:if test="${pm.next}">
+	                <li class="next"><a href="${pm.endPage+1}">▶</a></li>
+	            </c:if>  
+	        	</ul>
+	        </div>
+	    </div>
+	    
+		<form id="move" method="get">
+			<input type="hidden" name="pageNum" value="${pm.page.pageNum}">
+	        <input type="hidden" name="amount" value="${pm.page.amount}">    
+	    </form>
+	</div>
 </div>
 </body>
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>

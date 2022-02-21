@@ -45,12 +45,12 @@ public class JController {
 		HttpSession session = hsr.getSession();
 		String userid = (String) session.getAttribute("userid");
 		if(session.getAttribute("userid") != null) {
-			iJBook ibook = sqlSession.getMapper(iJBook.class);
-			ArrayList<RoomtypeList> roomtypeList = ibook.roomtypeList();
-			model.addAttribute("roomtypeList", roomtypeList);
-			Member userSession = ibook.getBookSession(userid);
-			model.addAttribute("userSession", userSession);
-			return "book";
+//			iJBook ibook = sqlSession.getMapper(iJBook.class);
+//			ArrayList<RoomtypeList> roomtypeList = ibook.roomtypeList();
+//			model.addAttribute("roomtypeList", roomtypeList);
+//			Member userSession = ibook.getBookSession(userid);
+//			model.addAttribute("userSession", userSession);
+			return "sub04";
 		} else {
 			rttr.addFlashAttribute("result", "do_login");
 			return "redirect:/";
