@@ -3,17 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
-
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
 	<meta charset="UTF-8">
-	<title>- 관리자 모드 -</title>
+	<title> - 실시간 예약 - </title>
+	<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 	<link rel="stylesheet" href="${path}/resources/css/reset.css"> 
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="${path}/resources/css/style.css"> 
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="${path}/resources/css/style.css">
 	<style>
 	.box {
 	   display:none;
@@ -35,7 +36,7 @@
 	}
 	.box_tab ul{text-align:center;}
 	.box_tab ul li {
-		margin:100px 5px 0;
+		margin:0 5px;
 		display:inline-block;
 		box-sizing: border-box;
 	    border: 2px solid #ddd;
@@ -57,7 +58,8 @@
 </head>
 
 <body>
-	<%@include file ="header.jsp" %>
+<%@include file ="header_sub.jsp" %>
+<div class="b_container">
 	<div>
 		<div class="box_tab">
 			<ul class="fixed">
@@ -72,13 +74,7 @@
 			<div class="box box_tab03"><%@include file = "member.jsp" %></div>
 		</div>
 	</div>
-<!-- 	<table> -->
-<!-- 		<tr> -->
-<!-- 			<td class=btn><input type=button id=reserv name=reserv value="예약관리"></td> -->
-<!-- 			<td class=btn><input type=button id=room name=room value="Room관리"></td> -->
-<!-- 			<td class=btn><input type=button id=member name=member value="회원관리"></td>		 -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
+</div>
 </body>
 <script>
 $(document)
