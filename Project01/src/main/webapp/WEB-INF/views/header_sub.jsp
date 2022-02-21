@@ -4,6 +4,9 @@
 	<div class="nav_wrap sub_nav_wrap">
 		<nav class="top_nav">
 			<div class="container d-flex flex-wrap">
+				<form name="frm" action="/project/logout" method="POST">
+					<input type="hidden" name="userid" value="${userid}">
+				</form>
 				<ul class="nav">
 					<c:if test="${userid==null}">
 						<li class="nav-item"><a href="/project/login">로그인</a></li>
