@@ -5,6 +5,8 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta charset="UTF-8">
 	<title> - Home - </title>
 	<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 	<link rel="stylesheet" href="${path}/resources/css/reset.css"> 

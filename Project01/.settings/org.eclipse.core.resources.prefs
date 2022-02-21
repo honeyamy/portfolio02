@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/header.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/reservation_update.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room2.jsp=UTF-8
