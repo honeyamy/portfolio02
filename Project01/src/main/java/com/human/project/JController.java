@@ -212,4 +212,18 @@ public class JController {
 		System.out.println(str);
 		return str;
 	}
+	
+	// 마이페이지
+	@RequestMapping("/mypage")
+	public String mypage(HttpServletRequest hsr, RedirectAttributes rttr) {
+		HttpSession session = hsr.getSession();
+		String userid = (String) session.getAttribute("userid");
+		if(userid != null) {
+
+			return "mypage";
+		} else {
+			rttr.addFlashAttribute("result", "do_login");
+			return "redirect:/";
+		}
+	}
 }

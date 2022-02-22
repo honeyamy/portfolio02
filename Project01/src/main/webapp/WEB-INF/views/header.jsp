@@ -14,13 +14,13 @@
 					</c:if>
 					<c:if test="${userid!=null}">
 						<c:if test="${m_type=='관리자'}">
-							<li class="nav-item">${userid}</li>	
+							<li class="nav-item"><a href="/project/mypage">${userid}</a></li>	
 							<li class="nav-item"><a href="/project/manage">[ 관리자페이지 ]</a></li>
-							<li class="nav-item" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}"><a href="#">로그아웃</a></li>
+							<li class="nav-item"><a href="#"  onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}">로그아웃</a></li>
 						</c:if>
 						<c:if test="${m_type!='관리자'}">
-							<li class="nav-item">${userid}</li>
-							<li class="nav-item" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}"><a href="#" class="px-2">로그아웃</a></li>
+							<li class="nav-item"><a href="/project/mypage">${userid}</a></li>
+							<li class="nav-item"><a href="#" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}" class="px-2">로그아웃</a></li>
 						</c:if>
 					</c:if>
 				</ul>
