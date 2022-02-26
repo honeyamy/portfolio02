@@ -90,6 +90,8 @@ p{margin-bottom:0;}
 
 
 /* 부트스트랩 이후 css 재시작 */
+/* 부트스트랩 초기화 */
+.border-bottom{border-bottom:1px solid rgba(181, 149, 104, 0.5)!important;}
 /* header.jsp */
 .nav_wrap{position:fixed; left:0; right:0; top:0; z-index:9999;}
 .nav_wrap .top_nav{background:rgba(255,255,255,0.15); padding-top:0.25rem!important; padding-bottom:0.25rem!important; color:#fff; font-weight:400;}
@@ -173,6 +175,9 @@ footer .sitemap ul li:nth-child(4) a::after{content:''; width:0;}
 .f_info{padding-bottom:2rem; color:#fff; opacity:0.25; text-align:center;}
 /* sub 페이지 시작 */
 .b_container{margin-top:200px;}
+
+/* mypage.jsp 마이페이지 */
+.mypage_tt{text-align:center; font-size:1.75rem; font-weight:500; margin-bottom:3.5rem;}
 
 /* @media (min-width: 1400px){ */
 /* 	footer{max-width:1320px;} */

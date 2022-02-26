@@ -18,6 +18,9 @@
 <body>
 	<%@include file ="header_sub.jsp" %>
 	<div class="b_container container">
+		<div class="mypage_tt border-bottom">
+			<h3>마이 페이지</h3>
+		</div>
 	</div>
 	<%@include file ="footer.jsp" %>
 </body>
