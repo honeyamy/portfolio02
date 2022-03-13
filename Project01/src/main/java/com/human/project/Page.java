@@ -3,6 +3,8 @@ package com.human.project;
 public class Page {
 	private int pageNum;
 	private int amount;
+	private int skip;
+	
 	public Page() { 
 		this(1,5);
 	}
@@ -21,6 +23,5 @@ public class Page {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
-	}
-	
+	}	
 }
