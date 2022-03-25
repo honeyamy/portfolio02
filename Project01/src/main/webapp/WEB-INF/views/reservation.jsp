@@ -165,7 +165,7 @@
 				url:'/project/deleteBook',
 				data:{check:check},
 				method:'POST',
-				datatype:'json',
+				datatype:'text',
 				success:function(txt) {
 					console.log(txt);
 					if(txt=="ok") {
