@@ -27,7 +27,12 @@
     transition-property:transform;
     
 }
-
+.swiper-wrapper{
+	height:350px;
+}
+.swiper-free-mode>.swiper-wrapper{
+	margin:7px auto 0; height:100px;
+}
 .swiper-slide img {
          display: block; 
          width: 100%; 
@@ -193,6 +198,7 @@
 		</ul>
 	</div>
 </div>
+<%@include file ="footer.jsp" %>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

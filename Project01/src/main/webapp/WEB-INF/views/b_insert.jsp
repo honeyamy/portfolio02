@@ -50,23 +50,26 @@ input {
 </style>
 <body>
 <%@include file ="header_sub.jsp" %>
-<h5>게시판 등록</h5>
-<form action="/project/insertBoard" method="post">
-    <div class=div>
-        <label class=a>제목</label>
-        <input name="title">
-    </div>
-    <div class=div>
-        <label class=a>내용</label>
-        <textarea rows="5" id="content" name="content"></textarea>
-    </div>
-    <div class=div>
-        <label class=a>글쓴이</label>
-        <input type=text name="writer" value="${userid}">
-    </div>
-    <br>
-    <button id="insert" class="insert">완료</button>
-</form>
+<div class="b_container">
+	<h5>게시판 등록</h5>
+	<form action="/project/insertBoard" method="post">
+	    <div class=div>
+	        <label class=a>제목</label>
+	        <input name="title">
+	    </div>
+	    <div class=div>
+	        <label class=a>내용</label>
+	        <textarea rows="5" id="content" name="content"></textarea>
+	    </div>
+	    <div class=div>
+	        <label class=a>글쓴이</label>
+	        <input type=text name="writer" value="${userid}">
+	    </div>
+	    <br>
+	    <button id="insert" class="insert">완료</button>
+	</form>
+</div>
+<%@include file ="footer.jsp" %>
 </body>
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
