@@ -36,10 +36,10 @@
 						<a href="/project/room">객실소개</a>
 						<ul class="b_sub_nav">
 							<li><a href="/project/room">Room-A</a></li>
-							<li><a href="/project/room2">Room-B</a></li>
-							<li><a href="/project/room3">Room-C</a></li>
-							<li><a href="/project/room4">Room-D</a></li>
-							<li><a href="/project/room5">Room-E</a></li>
+							<li><a href="/project/room">Room-B</a></li>
+							<li><a href="/project/room">Room-C</a></li>
+							<li><a href="/project/room">Room-D</a></li>
+							<li><a href="/project/room">Room-E</a></li>
 						</ul>
 					</li>
 					<li class="nav-item"><a href="#">예약안내</a></li>
@@ -71,7 +71,7 @@
 // 				return false;
 // 			});
 			$('.bueno_header .nav > li.nav-item').hover(function(){
-				$('.b_sub_nav', this).slideToggle(500);
+				$(this).children('.b_sub_nav').slideToggle(500);
 				return false;
 			});
 		})

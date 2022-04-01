@@ -25,7 +25,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<div class="booking-list_btn"><input type="button" id="deleteBookBtn" value="선택삭제"></div>
+<!-- 			<div class="booking-list_btn"><input type="button" id="deleteBookBtn" value="선택삭제"></div> -->
 		</div>
 		<div id="dlgRU" style="display:none;">
 			<%@ include file ="reservation_update.jsp" %>
