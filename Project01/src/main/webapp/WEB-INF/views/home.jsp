@@ -86,7 +86,7 @@
 	</section>
 	<section class="main_section msection03 box">
 	</section>
-	<!-- footer 영역-->
+	<%@include file ="footer.jsp" %>
 </div>
 
 <script>

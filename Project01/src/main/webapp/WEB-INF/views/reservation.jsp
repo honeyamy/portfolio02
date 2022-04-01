@@ -8,7 +8,7 @@
 			<table class="booking-list">
 				<thead>
 					<tr>
-						<th colspan="2"></th><th>예약번호</th><th>아이디</th>
+						<th colspan="2"><input type="button" id="deleteBookBtn" value="선택삭제"></th><th>예약번호</th><th>아이디</th>
 						<th>고객이름</th><th>연락처</th><th>객실명</th>
 						<th>객실종류</th><th>인원</th><th>가격</th>
 						<th>체크인</th><th>체크아웃</th>
@@ -73,8 +73,9 @@
 		$(document)
 		.on('click', '.booking-list > tbody > tr', function(){
 			let arLine = [];
-			for(i = 2; i < $('td',this).length + 1; i++){
+			for(i = 3; i < $('td',this).length + 1; i++){
 				arLine.push($('td:nth-child('+ i +')', this).text());
+				console.log(arLine);
 			}
 			console.log(arLine);
 // 			let title = $('td:nth-child(2)', this).text();
@@ -82,6 +83,7 @@
 // 			let phone = $('td:nth-child(5)', this).text();
 // 			let roomtype = $('td:nth-child(7)', this).text();
 			let title = arLine[0];
+			console.log(title);
 			let username = arLine[2];
 			let phone = arLine[3];
 			let roomtype = arLine[5];
@@ -127,7 +129,6 @@
 			})
 			return false;
 		})
-
 		.on('click', '.option', function(){
 			$('.option > ul').slideToggle();
 			return false;
@@ -165,7 +166,7 @@
 				url:'/project/deleteBook',
 				data:{check:check},
 				method:'POST',
-				datatype:'json',
+				datatype:'text',
 				success:function(txt) {
 					console.log(txt);
 					if(txt=="ok") {
@@ -176,6 +177,12 @@
 					}
 				}
 			});
+		})
+		.on('click', 'input[type=submit]', function(){
+			if($('.get_roomtype').val() == ''){
+				alert('예약 변경할 객실을 선택해주세요.');
+				return false;
+			}
 		})
 		;
 // 		function loadList(title){

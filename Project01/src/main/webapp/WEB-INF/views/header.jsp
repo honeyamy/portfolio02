@@ -14,13 +14,13 @@
 					</c:if>
 					<c:if test="${userid!=null}">
 						<c:if test="${m_type=='관리자'}">
-							<li class="nav-item">${userid}</li>	
+							<li class="nav-item"><a href="/project/mypage">${userid}</a></li>	
 							<li class="nav-item"><a href="/project/manage">[ 관리자페이지 ]</a></li>
-							<li class="nav-item" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}"><a href="#">로그아웃</a></li>
+							<li class="nav-item"><a href="#"  onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}">로그아웃</a></li>
 						</c:if>
 						<c:if test="${m_type!='관리자'}">
-							<li class="nav-item">${userid}</li>
-							<li class="nav-item" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}"><a href="#" class="px-2">로그아웃</a></li>
+							<li class="nav-item"><a href="/project/mypage">${userid}</a></li>
+							<li class="nav-item"><a href="#" onclick="if(confirm('로그아웃하시겠습니까?')){javascript:document.frm.submit();return false;}" class="px-2">로그아웃</a></li>
 						</c:if>
 					</c:if>
 				</ul>
@@ -50,7 +50,7 @@
 							<li><a href="#">QNA</a></li>
 						</ul>
 					</li>
-					<li class="nav-item"><a href="/project/sub04">실시간예약</a></li>
+					<li class="nav-item" id="sub_4"><a href="/project/sub04">실시간예약</a></li>
 				</ul>
 			</header>
 		</div>
@@ -58,13 +58,14 @@
 	<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 	<script>
 		$(document)
-		.on('click','#sub_4', function() {
-			let result = '${result}';
-			if(result === 'do_login'){
-				alert('로그인 후 이용 가능합니다.');
-			}
-		})
 		.ready(function(){
+			let result = '${result}';
+			$('#sub_4').click(function(){
+				if(result == 'do_login'){
+					alert('로그인 후 이용 가능합니다.');
+					return false;
+				}
+			});
 // 			$('.bueno_header .nav > li.nav-item').mouseover(function(){
 // 				$('.b_sub_nav', this).slideDown();
 // 				return false;
@@ -74,5 +75,8 @@
 				return false;
 			});
 		})
+// 		.on('click','#sub_4', function() {
+
+// 		})
 		;
 	</script>

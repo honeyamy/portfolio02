@@ -15,7 +15,8 @@ input {
     border: 1px solid #ddd;
 }
 input.btn {
-	margin-left:700px;
+	margin-right:12.5px;
+	border:1px solid #ccc;
 }
 </style>
 <div>

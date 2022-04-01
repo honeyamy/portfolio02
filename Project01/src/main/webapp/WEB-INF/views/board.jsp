@@ -147,6 +147,7 @@
 	    </form>
 	</div>
 </div>
+<%@include file ="footer.jsp" %>
 </body>
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 <script>

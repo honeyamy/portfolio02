@@ -13,8 +13,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="${path}/resources/css/signin.css">
 <link rel="stylesheet" href="${path}/resources/css/style.css">
-
-
+<style>
+	.fs-4{text-shadow:3px 3px 0 #b59568, -1px -1px 0 #b59568, 1px -1px 0 #b59568, -1px 1px 0 #b59568, 1px 1px 0 #b59568;}
+	.fs-4:hover{color:#fff;}
+</style>
 </head>
 <body class="text-center">
 <div>
@@ -22,7 +24,7 @@
 </div>
 <form method=post action="/project/login_check" id=frmLogin class="form-signin">
 	<div>
-		<h1 class="logo"><a href="/project">LOGO</a></h1>
+		<h1 class="logo"><a class="fs-4" href="/project">Bueno días</a></h1>
 	    <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" required autofocus>
 		<input type=hidden name=user id=user value="${fail_user}">
 	    <input type="password" id="passcode" name="passcode" class="form-control" placeholder="Password" required>
