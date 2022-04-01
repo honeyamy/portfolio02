@@ -175,7 +175,7 @@ footer .sitemap ul li:nth-child(4) a::after{content:''; width:0;}
 .f_logo{text-align:center; opacity:0.5; padding:2rem 0;}
 .f_info{padding-bottom:2rem; color:#fff; opacity:0.25; text-align:center;}
 /* sub 페이지 시작 */
-.b_container{margin-top:200px; min-height: 100%; padding-bottom: 500px;}
+.b_container{margin-top:250px; min-height: 100%; padding-bottom: 500px;}
 /* manage.jsp 관리자페이지 */
 .ui-dialog .ui-dialog-titlebar-close::before, .ui-dialog .ui-dialog-titlebar-close::after{content:''; width:1px; height:10px; position:absolute;
 	left:50%; top:50%; transform:translate(-50%, -50%) rotate(45deg); background:#000;}
