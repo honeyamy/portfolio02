@@ -47,7 +47,6 @@
 	    border: 1px solid #000;
 	    font-weight:400;
 	    width: 100px;
-	    height: 20px;
 	    text-align : center;
  	    margin-left : 20px;
 	    cursor : pointer;
@@ -59,43 +58,46 @@
 </style>
 <body>
 <%@include file ="header_sub.jsp" %>
-<div class="div">
-	<form id="updateFrm" action="/project/update" method="post">
-	<div class="input_wrap">
-		<label class=a>게시판 번호</label>
-		<input name="bno" readonly="readonly" value='<c:out value="${get.bno}"/>' >
+<div class="b_container">
+	<div class="div">
+		<form id="updateFrm" action="/project/update" method="post">
+		<div class="input_wrap">
+			<label class=a>게시판 번호</label>
+			<input name="bno" readonly="readonly" value='<c:out value="${get.bno}"/>' >
+		</div>
+		<div class="input_wrap">
+			<label class=a>게시판 제목</label>
+			<input name="title" value='<c:out value="${get.title}"/>' >
+		</div>
+		<div class="input_wrap">
+			<label class=a>게시판 내용</label><br><br>
+			<textarea rows="3" name="content"><c:out value="${get.content}"/></textarea>
+		</div>
+		<div class="input_wrap">
+			<label class=a>게시판 작성자</label>
+			<input name="writer" readonly="readonly" value='<c:out value="${get.writer}"/>' >
+		</div>
+		<div class="input_wrap">
+			<label class=a>게시판 등록일</label>
+			<input name="regdate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${get.regdate}"/>' >
+		</div>
+		<div class="input_wrap">
+			<label class=a>게시판 수정일</label>
+			<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${get.updateDate}"/>' >
+		</div>		
+		<div class="btn_wrap">
+			<a class="btn" id="list">목록 페이지</a> 
+			<a class="btn" id="done">완료</a>
+			<a class="btn" id="delete">삭제</a>
+			<a class="btn" id="cancel">취소</a>
+		</div>
+		</form>
 	</div>
-	<div class="input_wrap">
-		<label class=a>게시판 제목</label>
-		<input name="title" value='<c:out value="${get.title}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label class=a>게시판 내용</label><br><br>
-		<textarea rows="3" name="content"><c:out value="${get.content}"/></textarea>
-	</div>
-	<div class="input_wrap">
-		<label class=a>게시판 작성자</label>
-		<input name="writer" readonly="readonly" value='<c:out value="${get.writer}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label class=a>게시판 등록일</label>
-		<input name="regdate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${get.regdate}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label class=a>게시판 수정일</label>
-		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${get.updateDate}"/>' >
-	</div>		
-	<div class="btn_wrap">
-		<a class="btn" id="list">목록 페이지</a> 
-		<a class="btn" id="done">완료</a>
-		<a class="btn" id="delete">삭제</a>
-		<a class="btn" id="cancel">취소</a>
-	</div>
-	</form>
-</div>
 	<form id="infoForm" action="/project/update" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${get.bno}"/>'>
 	</form>
+</div>
+<%@include file ="footer.jsp" %>
 </body>
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 <script>

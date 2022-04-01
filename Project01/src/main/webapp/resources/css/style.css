@@ -49,6 +49,7 @@ p{margin-bottom:0;}
 .book-list ul:nth-child(2) li{height:100px;}
 .book-list ul li{float:left; text-align:right; border-bottom:1px solid #ccc; height:50px; line-height:50px; width:70%;}
 .book-list ul li:first-child{width:30%; font-weight:500; text-align:left;}
+.book-list ul li input{line-height:45px; padding:0;}
 .book-list .option{position:relative; background:#fff; cursor:pointer; padding-right:25px; box-sizing:border-box;}
 .book-list .option::before{content:''; display:block; transform:rotate(45deg) translateY(-100%);
 	position:absolute; right:10px; top:50%;
@@ -56,7 +57,7 @@ p{margin-bottom:0;}
 .book-list .option ul{position:absolute; right:0; top:100%; border:1px solid #ccc; box-sizing:border-box; background:#fff; width:160px; box-shadow:0px 0px 10px 1px rgb(0 0 0 / 10%);}
 .book-list .option ul li{font-weight:300; text-align:right;height:auto; padding:5px 20px 5px 0; box-sizing:border-box; background:#fff; width:100%; line-height:1.2; white-space:nowrap; cursor:pointer;}
 .book-list .option ul li:last-child{border-bottom:0;}
-#getRoomList{width:100%; border-collapse:collapse;}
+#getRoomList{width:100%; border-collapse:collapse; text-align:center;}
 #getRoomList th{border:1px solid #ccc; padding:6px 0;}
 #getRoomList tbody tr{cursor:pointer;}
 #getRoomList tbody tr:hover{background:#f2f2f2;}
@@ -93,7 +94,7 @@ p{margin-bottom:0;}
 /* 부트스트랩 초기화 */
 .border-bottom{border-bottom:1px solid rgba(181, 149, 104, 0.5)!important;}
 /* header.jsp */
-.nav_wrap{position:fixed; left:0; right:0; top:0; z-index:9999;}
+.nav_wrap{position:fixed; left:0; right:0; top:0; z-index:99;}
 .nav_wrap .top_nav{background:rgba(255,255,255,0.15); padding-top:0.25rem!important; padding-bottom:0.25rem!important; color:#fff; font-weight:400;}
 .nav_wrap nav a{color:rgba(255,255,255,0.65); transition:0.3s;}
 .nav_wrap nav a:hover{color:rgba(255,255,255,1);}
@@ -163,7 +164,7 @@ p{margin-bottom:0;}
 /* .msection02 li a::after{content:''; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#49433d; opacity:0.4;} */
 .msection03{background:url('../images/msection03.jpg')center no-repeat; height:100%;}
 /* footer.jsp */
-footer{background:#3a3940;}
+footer{background:#3a3940; width: 100%; height: 300px; margin-top:-300px;}
 footer .sitemap ul{text-align:center; border-bottom:1px solid rgba(255,255,255,0.1);}
 footer .sitemap ul li{display:inline-block;}
 footer .sitemap ul li a{display:block; padding:2rem; font-size:1rem; position:relative; color:rgba(255,255,255,0.5); transition:0.3s;}
@@ -174,8 +175,11 @@ footer .sitemap ul li:nth-child(4) a::after{content:''; width:0;}
 .f_logo{text-align:center; opacity:0.5; padding:2rem 0;}
 .f_info{padding-bottom:2rem; color:#fff; opacity:0.25; text-align:center;}
 /* sub 페이지 시작 */
-.b_container{margin-top:200px;}
-
+.b_container{margin-top:200px; min-height: 100%; padding-bottom: 500px;}
+/* manage.jsp 관리자페이지 */
+.ui-dialog .ui-dialog-titlebar-close::before, .ui-dialog .ui-dialog-titlebar-close::after{content:''; width:1px; height:10px; position:absolute;
+	left:50%; top:50%; transform:translate(-50%, -50%) rotate(45deg); background:#000;}
+.ui-dialog .ui-dialog-titlebar-close::after{transform:translate(-50%, -50%) rotate(135deg);}
 /* mypage.jsp 마이페이지 */
 .mypage_tt{text-align:center; font-size:1.75rem; font-weight:500; margin-bottom:3.5rem;}
 

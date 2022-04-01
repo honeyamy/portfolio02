@@ -4,7 +4,7 @@
 <%@ page session="true" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
-<footer class="box">
+<footer>
 	<div class="sitemap container">
 		<ul>
 			<li><a href="#">객실소개</a></li>
@@ -23,13 +23,22 @@
 			대표 : bueno | bueno dias | 충청남도 천안시 동남구 대흥로 215
 			사업자번호 : 321-12-1357 | TEL : 041-561-1122 | FAX : 041-561-1122
 			<br>
-			copyright (c) 2020 bueno dias. all right reserved.
+			copyright (c) 2022 bueno dias. all right reserved.
 		</p>
 	</div>
 </footer>
 <script>
 	$(document)
 	.ready(function() {
+		$(window).resize(function(){
+			if($(window).height() > $(element).height()) {
+				if($(document).scrollTop() > 1080) {
+					console.log($(window).height());
+					$('footer').css({'position':'fixed','bottom':'0', 'left':'0', 'right':'0'});
+				}	
+			}
+		 });
+
 		let result = '${result}';
 		if(result === 'already_login'){
 			alert('로그아웃 후에 로그인 가능합니다.');

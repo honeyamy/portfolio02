@@ -50,7 +50,7 @@
 							<li><a href="#">QNA</a></li>
 						</ul>
 					</li>
-					<li class="nav-item"><a href="/project/sub04">실시간예약</a></li>
+					<li class="nav-item" id="sub_4"><a href="/project/sub04">실시간예약</a></li>
 				</ul>
 			</header>
 		</div>

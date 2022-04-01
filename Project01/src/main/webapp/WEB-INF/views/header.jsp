@@ -50,7 +50,7 @@
 							<li><a href="#">QNA</a></li>
 						</ul>
 					</li>
-					<li class="nav-item"><a href="/project/sub04">실시간예약</a></li>
+					<li class="nav-item" id="sub_4"><a href="/project/sub04">실시간예약</a></li>
 				</ul>
 			</header>
 		</div>
@@ -58,13 +58,14 @@
 	<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 	<script>
 		$(document)
-		.on('click','#sub_4', function() {
-			let result = '${result}';
-			if(result === 'do_login'){
-				alert('로그인 후 이용 가능합니다.');
-			}
-		})
 		.ready(function(){
+			let result = '${result}';
+			$('#sub_4').click(function(){
+				if(result == 'do_login'){
+					alert('로그인 후 이용 가능합니다.');
+					return false;
+				}
+			});
 // 			$('.bueno_header .nav > li.nav-item').mouseover(function(){
 // 				$('.b_sub_nav', this).slideDown();
 // 				return false;
@@ -74,5 +75,8 @@
 				return false;
 			});
 		})
+// 		.on('click','#sub_4', function() {
+
+// 		})
 		;
 	</script>

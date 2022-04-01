@@ -188,5 +188,12 @@
 // 			$('.get_booker').val($('.howmany', this).text());
 // 			$('.get_mobile').val($('.howmany', this).text());
 			$('.get_howmuch').val($('.howmuch', this).text());
-		});
+		})
+		.on('click', 'input[type=submit]', function(){
+			if($('.get_roomtype').val() == ''){
+				alert('예약할 객실을 선택해주세요.');
+				return false;
+			}
+		})
+		;
 	</script>

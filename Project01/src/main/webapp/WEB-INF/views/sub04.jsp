@@ -21,5 +21,6 @@
 <div class="b_container">
 	<%@ include file ="book.jsp" %>
 </div>
+<%@include file ="footer.jsp" %>
 </body>
 </html>
